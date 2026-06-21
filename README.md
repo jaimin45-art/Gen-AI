@@ -2,7 +2,7 @@
 
 An AI-powered platform that takes your resume, job description, and a short self-description, then generates a personalized interview prep report — technical questions, behavioral questions, skill gap analysis, and a day-wise preparation roadmap. Built this to actually help me prep for placements instead of just reading random question banks online.
 
-🔗 **Live Demo:** _coming soon_
+🔗 **Live Demo:** gen-ai-gray-xi.vercel.app
 🔗 **Backend API:** _coming soon_
 
 ---
