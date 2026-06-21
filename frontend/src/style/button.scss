@@ -1,16 +1,13 @@
 .button{
+
     border: none;
     outline: none;
     padding-inline: 1.5rem;
     padding-block: 0.75rem;
     border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
 
+    transition: all 0.3s ease-in-out;
 
     &.primary-button{
         background-color: #e1034d;
@@ -19,9 +16,5 @@
 
     &:active{
         transform: scale(0.9);
-        -webkit-transform: scale(0.9);
-        -moz-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-        -o-transform: scale(0.9);
-}
+    }
 }

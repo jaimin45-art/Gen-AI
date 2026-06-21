@@ -1,6 +1,6 @@
 //hooks layer manage state and api layer
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../auth.context";
 import { login,register,logout,getMe } from "../services/auth.api";
 
@@ -12,27 +12,50 @@ export const useAuth = () =>{
         setLoading(true)
         try{
         const data = await login({email,password})
-        setUser(data.user)
+        setUser(data.user) //in backend data return with user
+        return data.user
         }catch(err){
-            console.log(err)
+            console.log(err) 
         }finally{
 
             setLoading(false)
         }
     }
 
+
+
     const handleRegister = async ({username,email,password}) =>{
         setLoading(true)
+        try{
         const data = await register({username,email,password})
         setUser(data.user) //in backend data return with user
+        }catch(err){
         setLoading(false)
+        }finally{
+            setLoading(false)
+        }
     }
+
     const handleLogout = async ()=>{
         setLoading(true)
         const data = await logout()
         setUser(null) //remove user from frontend
         setLoading(false)
     }
+
+    useEffect(()=>{
+        const getAndSetUser = async ()=>{
+            try{
+            const data = await getMe()
+            setUser(data.user)
+            }catch(err){
+                setUser(null)
+            }finally{
+            setLoading(false)
+            }
+        }
+        getAndSetUser()
+    },[])
 
     return {user,loading,handleRegister,handleLogin,handleLogout}
 }
