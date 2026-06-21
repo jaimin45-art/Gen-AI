@@ -450,13 +450,16 @@ const Interview = () => {
           {/* Skill Gaps */}
           <div className="skill-gaps">
             <p className="skill-gaps__label">Skill Gaps</p>
-            <div className='skill-gaps__list'>
-    {(report.skillsGap || []).map((gap, i) => (
-        <span key={i} className={`skill-tag skill-tag--${gap.severity}`}>
-            {gap.skill}
-        </span>
-    ))}
-</div>
+            <div className="skill-gaps__list">
+              {(report.skillsGap || []).map((gap, i) => (
+                <span
+                  key={i}
+                  className={`skill-tag skill-tag--${gap.severity}`}
+                >
+                  {gap.skill}
+                </span>
+              ))}
+            </div>
           </div>
         </aside>
       </div>
